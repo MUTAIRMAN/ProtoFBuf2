@@ -7,8 +7,42 @@ option java_outer_classname = "HelloEmployeeProto";
 package helloworld;
 
 message employee {
-    string name = 1;
-    string id=2;
+  int64 totalCount = 1;
+
+  message ITEMS {
+    string id = 1;
+    string resourceUri = 2;
+    string resourceType = 3;
+    string title = 4;
+    string secondaryTitle = 5;
+    string externalUrl = 6;
+    string imageUrl = 7;
+    bool inactive = 8;
+
+    message METADATA {
+
+      message ADDITIONALPROP1 {
+      }
+
+      ADDITIONALPROP1 additionalProp1 = 1;
+
+      message ADDITIONALPROP2 {
+      }
+
+      ADDITIONALPROP2 additionalProp2 = 2;
+
+      message ADDITIONALPROP3 {
+      }
+
+      ADDITIONALPROP3 additionalProp3 = 3;
+    }
+
+    METADATA metadata = 9;
+  }
+
+  repeated ITEMS items = 2;
 }
+
+
 
 
